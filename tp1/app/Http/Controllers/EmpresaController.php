@@ -20,4 +20,7 @@ class EmpresaController extends Controller
             
         ]);
     }
+    public function index(){
+        return view('index')->with('empresas',Empresa::paginate('10'));
+    }
 }
