@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Empresa extends Model
 {
     use HasFactory;
+    public $table="empresas";
+    public $guarded =[];
 
     public function noticias(){
         return $this->hasMany(Noticia::class);

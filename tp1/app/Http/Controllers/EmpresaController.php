@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Empresa;
+use App\Models\Noticia;
 
 class EmpresaController extends Controller
 {
@@ -20,8 +23,11 @@ class EmpresaController extends Controller
             
         ]);
     }
-    public function index(){
-        return view('index')->with('empresas',Empresa::paginate('10'));
+    public function inicio(){
+        $empresas=Empresa::all();
+        $vac=compact('empresas');
+        return view("index",$vac);
+        
     }
     public function show(Empresa $empresa)
     {
