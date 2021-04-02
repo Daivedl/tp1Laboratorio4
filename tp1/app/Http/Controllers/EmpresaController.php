@@ -23,4 +23,38 @@ class EmpresaController extends Controller
     public function index(){
         return view('index')->with('empresas',Empresa::paginate('10'));
     }
+    public function show(Empresa $empresa)
+    {
+        return view('home')->with('empresa', $empresa);
+    }
+
+   
+    public function edit(Empresa $empresa)
+    {
+        return view('empresa.editar')->with('empresa',$empresa);
+    }
+
+   
+    public function update(Request $request, Empresa $empresa)
+    {
+        $this->validar($request);
+        $empresa->denominacion = $request['denominacion'];
+        $empresa->telefono = $request['telefono'];
+        $empresa->horarioAtencion = $request['horarioAtencion'];
+        $empresa->quienesSomos = $request['quienesSomos'];
+        $empresa->latitud = $request['latitud'];
+        $empresa->longitud = $request['longitud'];
+        $empresa->domicilio = $request['domicilio'];
+        $empresa->email = $request['email'];
+        $empresa->save();
+        return redirect('/');
+    }
+
+   
+    public function destroy(Empresa $empresa)
+    {
+        $empresa->delete();
+        return redirect('/');
+    }
+    
 }
