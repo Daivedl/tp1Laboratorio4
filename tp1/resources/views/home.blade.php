@@ -69,9 +69,7 @@
 					<li style="list-style: none;" class="active">
 					  <a href="/">INICIO</a>
 					</li>
-					<li style="list-style: none;">
-					  <a href="./">LISTA EMPRESAS</a>
-					</li>
+				
 				  </ul>                           
 				</div>
 			</nav>
@@ -98,7 +96,9 @@
       <section class="well well1 well1_ins1">
         <div class="camera_container">
           <div id="camera" class="camera_wrap">
-            <div data-src="images/page-1_slide1.jpg">
+            <div data-src="{{url('images/page-1_slide1.jpg')}}">
+            
+            
               <div class="camera_caption fadeIn">
                 <div class="jumbotron jumbotron1">
                   <em>
