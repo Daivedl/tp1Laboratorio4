@@ -29,6 +29,11 @@ class EmpresaController extends Controller
         return view("index",$vac);
         
     }
+    public function detalleId($id){
+        $empresas=Empresa::find($id);
+        $vac = compact("empresas");
+        return view("home",$vac);
+    }
     public function show(Empresa $empresa)
     {
         return view('home')->with('empresa', $empresa);

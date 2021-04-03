@@ -9,6 +9,7 @@ use App\Models\Noticia;
 
 
 Route::get('/', [EmpresaController::class,'inicio']);
+Route::get('/home/{id}',[EmpresaController::class,'detalleId']);
 Route::get('/home', function (){
     return view('home');
 });

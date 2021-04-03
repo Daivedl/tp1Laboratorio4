@@ -11,7 +11,7 @@
             
                 <td>{{$empresa->denominacion}}</td>
                 
-                <td><a href="{{url('/detalle/'.$empresa->id)}}">Ver página</a></td>
+                <td><a href="{{url('/home/'.$empresa->id)}}">Ver página</a></td>
                
 
             @empty
